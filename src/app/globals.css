@@ -1,26 +1,38 @@
 @import "tailwindcss";
 
+@theme {
+  --font-fell: var(--font-fell), "IM Fell Great Primer", Georgia, serif;
+
+  /* Landor's Cottage Established Color System */
+  --color-landor-primary: #2e3323;
+  --color-landor-fog: #93a6bf;
+  --color-landor-light: #bf9924;
+  --color-landor-warm: #f2dc9b;
+  --color-landor-earth-deep: #593f1e;
+  --color-landor-earth-alt: #a67c49;
+  --color-landor-journal: #805d2b;
+
+  /* Semantic shortcuts */
+  --color-primary: #2e3323;
+  --color-fog: #93a6bf;
+  --color-light: #bf9924;
+  --color-warm: #f2dc9b;
+  --color-earth-deep: #593f1e;
+  --color-earth-alt: #a67c49;
+  --color-journal: #805d2b;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #f2dc9b;
+  --foreground: #2e3323;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-fell);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
