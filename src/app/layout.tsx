@@ -5,6 +5,7 @@ import {
   Allura,
 } from "next/font/google";
 import "./globals.css";
+import Navigation from "@/components/shared/Navbar";
 
 const fell = IM_Fell_Great_Primer({
   variable: "--font-main",
@@ -42,7 +43,11 @@ export default function RootLayout({
       lang="en"
       className={`${fell.variable} ${cormorant.variable} ${allura.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {" "}
+        <Navigation />
+        {children}
+      </body>
     </html>
   );
 }

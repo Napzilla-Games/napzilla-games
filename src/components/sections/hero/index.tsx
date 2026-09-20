@@ -1,5 +1,3 @@
-import Navigation from "../../shared/Navbar";
-
 export default function Hero() {
   return (
     <section
@@ -24,8 +22,6 @@ export default function Hero() {
         aria-hidden="true"
         className="absolute inset-0 bg-linear-to-br from-transparent via-transparent to-landor-light/10"
       />
-
-      <Navigation />
 
       <div className="relative z-10 flex min-h-screen items-end px-6 pb-12 md:px-12 md:pb-16 lg:px-16">
         <div className="max-w-xl">

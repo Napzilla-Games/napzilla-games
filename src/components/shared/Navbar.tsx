@@ -19,8 +19,7 @@ export default function Navigation() {
   };
 
   return (
-    <header className="absolute inset-x-0 top-0 z-50 px-6 pt-6 md:px-12 md:pt-8 lg:px-16">
-      {/* Top bar */}
+    <header className="fixed font-main text-white inset-x-0 top-0 z-50 px-6 pt-6 md:px-12 md:pt-8 lg:px-16">
       <div className="flex items-center justify-between">
         {/* Logo */}
         <Link
@@ -49,14 +48,12 @@ export default function Navigation() {
           className="group relative z-50 flex h-11 w-11 cursor-pointer items-center justify-center rounded-full text-white transition-all duration-300 hover:bg-white/5 active:scale-95"
         >
           <span className="relative flex h-5 w-5 items-center justify-center">
-            {/* Top line */}
+            {" "}
             <span
               className={`absolute h-px w-5 bg-white/85 transition-all duration-500 ease-out ${
                 isOpen ? "rotate-45" : "-translate-y-1.5 group-hover:w-6"
               }`}
             />
-
-            {/* Bottom line */}
             <span
               className={`absolute h-px w-5 bg-white/65 transition-all duration-500 ease-out ${
                 isOpen ? "-rotate-45" : "translate-y-1.5 group-hover:w-6"
@@ -69,7 +66,7 @@ export default function Navigation() {
       {/* Navigation panel */}
       <div
         id="navigation-menu"
-        className={`fixed inset-0 z-40 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+        className={`fixed inset-0 z-40 transition-opacity duration-700 ${
           isOpen
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"
@@ -78,8 +75,8 @@ export default function Navigation() {
         {/* Desktop right sidebar */}
         <nav
           aria-label="Main navigation"
-          className={`absolute right-0 top-0 hidden h-screen w-100 max-w-[90vw] bg-black/20 px-10 py-32 backdrop-blur-md transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] md:block lg:w-112.5 ${
-            isOpen ? "translate-x-0" : "translate-x-full"
+          className={`absolute right-0 top-0 hidden h-screen w-100 max-w-[90vw] bg-black/20 px-10 py-32 backdrop-blur-md transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] md:block lg:w-112.5 ${
+            isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
           }`}
         >
           <ul className="flex flex-col">
@@ -107,8 +104,8 @@ export default function Navigation() {
         {/* Mobile full-screen menu */}
         <nav
           aria-label="Mobile navigation"
-          className={`absolute inset-0 h-screen w-screen bg-black/20 px-8 py-32 backdrop-blur-md transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] md:hidden ${
-            isOpen ? "translate-y-0" : "-translate-y-full"
+          className={`absolute inset-0 h-screen w-screen bg-black/20 px-8 py-32 backdrop-blur-md transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] md:hidden ${
+            isOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
           }`}
         >
           <ul className="flex flex-col">
