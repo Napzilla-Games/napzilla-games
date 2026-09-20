@@ -29,7 +29,7 @@ export default function Hero() {
 
       <div className="relative z-10 flex min-h-screen items-end px-6 pb-12 md:px-12 md:pb-16 lg:px-16">
         <div className="max-w-xl">
-          <h1 className="font-serif text-4xl leading-tight text-white drop-shadow-lg md:text-6xl lg:text-7xl">
+          <h1 className="font-main text-4xl leading-tight text-white drop-shadow-lg md:text-6xl lg:text-7xl">
             Landor&apos;s Cottage
           </h1>
         </div>

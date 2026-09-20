@@ -1,19 +1,35 @@
 import type { Metadata } from "next";
-import { IM_Fell_Great_Primer } from "next/font/google";
+import {
+  IM_Fell_Great_Primer,
+  Cormorant_Garamond,
+  Allura,
+} from "next/font/google";
 import "./globals.css";
 
-const imFellGreatPrimer = IM_Fell_Great_Primer({
-  weight: "400",
+const fell = IM_Fell_Great_Primer({
+  variable: "--font-main",
   subsets: ["latin"],
-  style: ["normal", "italic"],
-  variable: "--font-fell",
+  weight: "400",
+  display: "swap",
+});
+
+const cormorant = Cormorant_Garamond({
+  variable: "--font-secondary",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const allura = Allura({
+  variable: "--font-cursive",
+  subsets: ["latin"],
+  weight: "400",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Landor's Cottage | Napzilla Games",
-  description:
-    "An atmospheric exploration inspired by Edgar Allan Poe and the Hudson River School.",
+  title: "Landor's Cottage",
+  description: "A story of the valley, the cottage, and the journey within.",
 };
 
 export default function RootLayout({
@@ -24,11 +40,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${imFellGreatPrimer.variable} h-full antialiased`}
+      className={`${fell.variable} ${cormorant.variable} ${allura.variable}`}
     >
-      <body className="min-h-full flex flex-col font-fell bg-landor-warm text-landor-primary selection:bg-landor-light/30 selection:text-landor-primary">
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
